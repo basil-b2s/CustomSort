@@ -16,18 +16,17 @@ class Program
         };
 
 
-        Sort.BubbleSort(students, (x, y) => x.Name.CompareTo(y.Name));
+        Sort<Student>.BubbleSort(students, (x, y) => x.Name.CompareTo(y.Name));
 
         Console.WriteLine("Sorted based on name");
         PrintData(students);
 
-        Sort.BubbleSort(students, (x, y) => x.Age.CompareTo(y.Age));
+        Sort<Student>.BubbleSort(students, (x, y) => x.Age.CompareTo(y.Age));
 
         Console.WriteLine("Sorted based on Age");
         
         PrintData(students);
-
-        Sort.BubbleSort(students, (x, y) => Comparer<double>.Default.Compare(x.Score, y.Score));
+        Sort<Student>.BubbleSort(students, (x, y) => x.Score.CompareTo(y.Score));
 
         Console.WriteLine("Sorted based on Score");
 

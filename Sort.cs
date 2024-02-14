@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace CustomSort
 {
-    public static class Sort
+    public static class Sort<T>
     {
-        public static void BubbleSort<T>(List<T> dataList, Comparison<T> comparison) 
+        public delegate int ComparisonDelegate(T x, T y);
+
+        public static void BubbleSort(List<T> dataList, ComparisonDelegate comparison) 
         { 
             if(dataList == null || comparison == null)
             {
